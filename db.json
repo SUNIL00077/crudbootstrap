@@ -1,0 +1,36 @@
+{
+  "posts": [
+    {
+      "name": "qwertyuio",
+      "email": "asdfghj",
+      "mobile": "zxcvbnmko",
+      "city": "cgfvagdv",
+      "id": 4
+    },
+    {
+      "name": "sunil",
+      "email": "bsbhgsvhg",
+      "mobile": "5535315731",
+      "city": "ersfdgsan",
+      "id": 5
+    },
+    {
+      "name": "Sunil",
+      "email": "sunil@gmail.com",
+      "mobile": "1234567890",
+      "city": "dhayati",
+      "id": 6
+    },
+    {
+      "name": "Rahul",
+      "email": "qwERTy",
+      "mobile": "12445332542",
+      "city": "bbashvsghqg",
+      "id": 7
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}

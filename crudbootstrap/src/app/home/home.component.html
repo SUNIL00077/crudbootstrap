@@ -1,0 +1,79 @@
+<nav class="navbar navbar-light bg-light justify-content-between">
+    <a class="navbar-brand">Navbar</a>
+    <form class="form-inline">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="button" data-toggle="modal" data-target="#exampleModal" (click)="add()">Adddata</button>
+    </form>
+  </nav>
+<table class="table mt-4">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>name</th>
+            <th>Email</th>
+            <th>Mobile No.</th>
+            <th>City</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of formValue let i=index">
+            <th>{{i+1}}</th>
+            <td>{{data.name}}</td>
+            <td>{{data.email}}</td>
+            <td>{{data.mobile}}</td>
+            <td>{{data.city}}</td>
+            <td class="">
+                <button class="btn btn-success btn-sm" (click)="edit(data)" data-toggle="modal" data-target="#exampleModal">Edit</button>&nbsp;
+                <button class="btn btn-danger btn-sm" (click)="deleteData(data)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Add Data</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <form [formGroup]="form">
+                        <div class="form-group">
+                            <label for="Name">Name</label>
+                         <input type="text" class="form-control" placeholder="Enter Name" formControlName="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                         <input type="text" class="form-control" placeholder="Enter Email" formControlName="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="Mobile">Mobile No.</label>
+                         <input type="text" class="form-control" placeholder="Enter Mobile No." formControlName="mobile">
+                        </div>
+                        <div class="form-group">
+                            <label for="City">City</label>
+                         <input type="text" class="form-control" placeholder="Enter city" formControlName="city">
+                        </div>
+                    </form>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button *ngIf="addshow" type="button" class="btn btn-success" (click)="submit()" [disabled]="this.form.invalid" >Submit</button>
+          <button class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button *ngIf="showupdate" type="button" class="btn btn-primary" (click)="updateData()">Update</button>
+        </div>
+      </div>
+    </div>
+  </div>
